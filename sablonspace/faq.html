@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="simulation.html">Simulation</a></li>
+                <li><a href="cards.html">Cards</a></li>
+                <li><a href="chart.html">Chart</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+
+
+            </ul>
+        </nav>
+        <h1>Geomagnetic Storms</h1>
+    </header>
+
+
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #FFFFFF;
+        }
+        .question {
+            cursor: pointer;
+            margin: 10px 0;
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+        .answer {
+            display: none;
+            margin: 5px 0 15px 0;
+            background-color: #ffffff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sıkça Sorulan Sorular</h1>
+
+    <div class="faq">
+        <div class="question" onclick="toggleAnswer(1)">Soru 1:Auorora nedir ve nasıl oluşur?</div>
+        <div class="answer" id="answer1"></div>
+
+        <div class="question" onclick="toggleAnswer(2)">Soru 2:Aurora'ların renkleri neye bağlıdır ve hangi renkler görünebilir?</div>
+        <div class="answer" id="answer2"></div>
+
+        <div class="question" onclick="toggleAnswer(3)">Soru 3:Güneş fırtınalarının ve güneş rüzgarının Aurora oluşumundaki rolü nedir?</div>
+        <div class="answer" id="answer3"></div>
+
+        <div class="question" onclick="toggleAnswer(4)">Soru 4:Aurora Borealis ve Aurora Australis arasındaki fark nedir?</div>
+        <div class="answer" id="answer4"></div>
+
+        <div class="question" onclick="toggleAnswer(5)">Soru 5:Aurora'ların şekilleri nasıl oluşur?</div>
+        <div class="answer" id="answer5"></div>
+
+        <div class="question" onclick="toggleAnswer(6)">Soru 6:Aurora oluşumunda Dünya'nın manyetik alanının rolü nedir?</div>
+        <div class="answer" id="answer6"></div>
+
+        <div class="question" onclick="toggleAnswer(7)">Soru 7:Aurora'ların oluşumunda hangi atmosferik gazlar rol oynar?</div>
+        <div class="answer" id="answer7"></div>
+
+        <div class="question" onclick="toggleAnswer(8)">Soru 8:Tarih boyunca insanlar Aurora'ları nasıl açıklamışlardır?</div>
+        <div class="answer" id="answer8"></div>
+
+        <div class="question" onclick="toggleAnswer(9)">Soru 9:Aurora'ların mitolojideki rolü nedir?</div>
+        <div class="answer" id="answer9"></div>
+
+        <div class="question" onclick="toggleAnswer(10)">Soru 10:Güneş aktivitesi ile Aurora görülme sıklığı arasında nasıl bir ilişki vardır?</div>
+        <div class="answer" id="answer10"></div>
+
+        <div class="question" onclick="toggleAnswer(11)">Soru 11:Aurora oluşumunda atom ve elektronların rolü nedir?</div>
+        <div class="answer" id="answer11"></div>
+
+        <div class="question" onclick="toggleAnswer(12)">Soru 12:Aurora'lar neden genellikle kutup bölgelerinde görülür?</div>
+        <div class="answer" id="answer12"></div>
+
+        <div class="question" onclick="toggleAnswer(13)">Soru 13:Aurora'ların gözlemlenmesi için en iyi koşullar nelerdir?</div>
+        <div class="answer" id="answer13"></div>
+
+        <div class="question" onclick="toggleAnswer(14)">Soru 14:Aurora'ların bilimsel açıklaması ne zaman yapılmıştır?</div>
+        <div class="answer" id="answer14"></div>
+    </div>
+
+    <script>
+
+        const answersPool = {
+            1: [
+                "Aurora, Güneş'ten gelen yüklü parçacıkların Dünya'nın atmosferindeki gazlarla etkileşimi sonucu oluşan doğal bir ışık gösterisidir. Bu fenomen, genellikle kutup bölgelerinde gözlemlenir ve görsel olarak etkileyici renkli ışık bantları veya dalgaları şeklinde kendini gösterir. Aurora, iki ana türde bulunur: Aurora Borealis (Kuzey Işığı) ve Aurora Australis (Güney Işığı). Her ikisi de benzer fiziksel süreçlerle oluşur, ancak coğrafi konumları farklıdır."
+            ],
+            2: [
+                "Aurora'ların renkleri, hangi atmosferik gazların etkileşime girdiğine ve bu etkileşim sırasında açığa çıkan enerji seviyesine bağlıdır. Örneğin, oksijen atomları, özellikle yaklaşık 100 km yükseklikte etkileşime girdiğinde yeşil ışık yayar ve daha yüksek irtifalarda kırmızı renk oluşturabilir. Azot molekülleri ise, daha düşük yüksekliklerde mavi veya mor ışıklar yayar. Bu etkileşimlerin sonucu olarak, aurora'lar genellikle yeşil, kırmızı, mavi ve mor tonlarında gözlemlenir."
+            ],
+            3: [
+                "Güneş fırtınaları ve güneş rüzgarı, yüklü parçacıkların Dünya'nın manyetosferine ulaşmasına neden olur. Bu parçacıklar, güneş patlamaları ve koronal kütle atımları sırasında serbest kalır. Yüklü parçacıklar, Dünya'nın manyetik alanı tarafından kutup bölgelerine yönlendirilir. Bu bölgelerde, yüklü parçacıklar atmosferdeki gazlarla etkileşime girerek aurora'nın oluşumunu sağlar. Yani, güneş aktivitesi, aurora gözlemlenme sıklığını doğrudan etkileyen önemli bir faktördür."
+            ],
+            4:[
+                "Aurora Borealis, Kuzey Yarımküre'de gözlemlenen aurora türüdür, Aurora Australis ise Güney Yarımküre'de gözlemlenir. Her iki aurora türü de aynı fiziksel süreçlerle oluşmasına rağmen, coğrafi konumları nedeniyle farklı isimlendirilir. Aurora Borealis, özellikle Norveç, Kanada ve Alaska gibi kuzey bölgelerinde sık görülürken, Aurora Australis, Antarktika ve çevresindeki okyanus bölgelerinde gözlemlenir. Bu farklılık, Dünya'nın manyetik alanının doğası ve yüklü parçacıkların kutup bölgelerine yönlendirilmesi ile ilgilidir."
+            ],
+            5:[
+                "Aurora'ların şekilleri, yüklü parçacıkların Dünya'nın manyetik alan çizgileri boyunca hareket etmesi ve atmosferdeki gazlarla etkileşimleri sonucu ortaya çıkar. Manyetik alan çizgileri, kutup bölgelerinde daha yoğun ve sıkı olduğu için, bu bölgelerdeki aurora'lar daha belirgin ve etkileyici şekillerde gözlemlenir. Aurora'lar genellikle dalgalı, şeritler halinde veya parlayan bulutlar şeklinde ortaya çıkar ve bu şekillerin dinamikliği, atmosferdeki gazların yoğunluğuna ve yüklü parçacıkların akışına bağlıdır."
+            ],
+            6:[
+                "Dünya'nın manyetik alanı, Güneş'ten gelen yüklü parçacıkları yönlendirerek kutup bölgelerine çeker. Bu manyetik alan, yüklü parçacıkları koruyan bir kalkan işlevi görür, ancak kutup bölgelerinde zayıf olduğu için parçacıkların atmosferle etkileşime girmesine olanak tanır. Bu etkileşim, aurora'ların oluşumunu sağlar ve kutup bölgelerindeki aurora'ların gözlemlenmesini mümkün kılar."
+            ],
+            7:[
+                "Aurora'nın oluşumunda, atmosferdeki bazı gazlar, özellikle oksijen ve azot önemli bir rol oynar. Güneş'ten gelen yüklü parçacıklar, bu gazlarla çarpıştığında enerji açığa çıkar ve bu enerji, ışık olarak görünür. Oksijen, yeşil ve kırmızı ışıklar yayarken, azot mavi ve mor renkler üretir. Bu gazların atmosferdeki yoğunluğu ve etkileşim türü, aurora'nın renklerini belirler."
+            ],
+            8:[
+                "Tarih boyunca insanlar, aurora'ları mistik olaylar veya doğaüstü işaretler olarak açıklamışlardır. Örneğin, Kuzey Avrupa'daki Vikingler aurora'ların savaşçıların ruhlarının gökyüzünde savaştığını düşündü. Bazı yerli halklar, aurora'ları atalarının ruhlarının yeryüzüyle iletişim kurduğu bir işaret olarak yorumladılar. Bu tür inançlar, aurora'nın gözlemlenmesiyle ilişkili olarak kültürel anlamlar ve mitolojik hikayeler oluşturmuştur."
+            ],
+            9:[
+                "Aurora'ların mitolojideki rolü, ruhların veya tanrıların gökyüzünde dans ettiği veya insanların yaşamına etki eden işaretler olduğu inançlarıyla doludur. Örneğin, bazı yerli Inuit kültürlerinde aurora'lar, ölmüş ataların ruhlarının dans ettiği olarak kabul edilir. Diğer bazı kültürlerde ise aurora, felaketlerin habercisi veya tanrıların mesajı olarak yorumlanır. Bu tür inançlar, aurora'nın gizemli ve etkileyici doğasına dair insan hayal gücünü beslemiştir."
+            ],
+            10:[
+                "Güneş aktivitesi ile aurora görülme sıklığı arasında doğrudan bir ilişki vardır. Güneş'in manyetik aktivitesinin yüksek olduğu dönemlerde, özellikle güneş fırtınaları ve koronal kütle atımları sırasında aurora'ların görülme olasılığı artar. Bu tür olaylar, daha fazla yüklü parçacığın Dünya'ya ulaşmasına neden olur. Dolayısıyla, güneş maksimumu dönemlerinde aurora'lar daha sık ve parlak bir şekilde gözlemlenirken, düşük güneş aktivitesi dönemlerinde bu durum azalır."
+            ],
+            11:[
+                "Aurora'nın oluşumunda, atom ve elektronların etkileşimi kritik bir rol oynar. Güneş'ten gelen yüksek enerjili elektronlar, atmosferin üst katmanlarına ulaştıklarında, atmosferdeki gaz molekülleriyle çarpışır. Bu çarpışmalar sonucunda gaz atomları enerji kazanır ve uyarılmış hale gelir. Daha sonra bu atomlar kararlı hale geri dönerken açığa çıkan enerji, ışık olarak görünür. Bu süreç, aurora'nın gözlemlenen renklerini ve parlaklığını belirler."
+            ],
+            12:[
+                "Aurora'lar genellikle kutup bölgelerinde görülür çünkü Dünya'nın manyetik alanı, yüklü parçacıkları bu bölgelere yönlendirir. Manyetik alanın kutup bölgelerinde daha zayıf olması, parçacıkların atmosferle etkileşime girmesine ve aurora'ların ortaya çıkmasına olanak tanır. Bu nedenle, kutup bölgeleri aurora'ların gözlemlenmesi için en uygun yerlerdir."
+            ],
+            13:[
+                "Aurora'ların gözlemlenmesi için en iyi koşullar, açık ve karanlık bir gökyüzü, düşük ışık kirliliği ve yüksek güneş aktivitesidir. Karanlık bir alan, şehir ışıklarından uzak olmak, aurora'ların daha belirgin bir şekilde gözlemlenmesine yardımcı olur. Kış ayları, uzun gece süreleri nedeniyle aurora'ların gözlemlenmesi için en uygun mevsimdir; bu dönemde karanlık saatler daha fazladır."
+            ],
+            14:[
+                "Aurora'ların bilimsel açıklaması, 19. yüzyılda yapılmaya başlanmış olsa da, Güneş rüzgarları ve Dünya'nın manyetosferinin etkileşimi üzerine daha derin bir anlayış 20. yüzyılın ortalarına doğru gelişmiştir. İlk başta mistik ve doğaüstü bir olay olarak kabul edilen aurora'lar, yapılan bilimsel araştırmalar ve gözlemler sayesinde, atmosferdeki gazlarla yüklü parçacıkların etkileşimi sonucunda ortaya çıkan bir fenomen olarak açıklanmıştır. Bu gelişmeler, aurora'nın oluşumunu daha iyi anlamamıza yardımcı olmuştur."
+            ]
+        };
+
+        function toggleAnswer(questionId) {
+            const answerElement = document.getElementById("answer" + questionId);
+            const pool = answersPool[questionId];
+
+
+            if (answerElement.style.display === "none") {
+                const randomIndex = Math.floor(Math.random() * pool.length);
+                answerElement.innerText = pool[randomIndex];
+                answerElement.style.display = "block";
+            } else {
+                answerElement.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+<head>
+
+</head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+
+        }
+    </style>
+</head>
